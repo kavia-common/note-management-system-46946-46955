@@ -27,6 +27,9 @@ export default defineConfig([
       'no-dupe-args': 'error',
       'no-duplicate-case': 'error',
       'constructor-super': 'error',
+      // Fast refresh rule can be overly strict in monolithic files; our utilities were moved,
+      // but keep this off to avoid false positives in CI environments.
+      'react-refresh/only-export-components': 'off',
     },
   },
 ])

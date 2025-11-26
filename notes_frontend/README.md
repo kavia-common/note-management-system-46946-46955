@@ -1,16 +1,42 @@
-# React + Vite
+# Notes Frontend (Tizen Web, React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A basic notes application for Tizen web, featuring create, list, view, edit, and delete. Notes are persisted in `localStorage` under the key `notes_v1`. The UI follows the Ocean Professional theme.
 
-Currently, two official plugins are available:
+## Run locally (preview on port 3000)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Install dependencies (already present in this container): `npm install`
+- Start dev server: `npm run dev`
+- Open the preview at: http://localhost:3000
 
-## React Compiler
+Alternatively, for a static preview build:
+- Build: `npm run build`
+- Preview: `npm run preview`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Using the app
 
-## Expanding the ESLint configuration
+- Add Note: Click the “+ Add Note” button in the header to create a new note.
+- Select a Note: Click any note title on the left list to view/edit it.
+- Edit: Update the title and body in the right pane and press “Save Changes.”
+- Delete: Use the “Delete” button on a note item in the list.
+- Search: Use the search box above the list to filter by title/body.
+- Keyboard/Remote basics:
+  - UP/DOWN to move focus in the list
+  - ENTER to select the focused item
+  - BACK to deselect and return to the list
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Accessibility: Inputs have labels; the app includes an aria-live status region for save/delete feedback.
+
+## Persistence
+
+Notes are stored in browser `localStorage` with the key `notes_v1`. Data persists across page reloads and dev server restarts.
+
+## Tizen packaging (optional)
+
+- Build: `npm run build:tizen`
+- Package widget: `npm run package:tizen` (creates `app.wgt` at repo root)
+
+## Tech
+
+- React + Vite
+- No external services, no environment variables
+- Ocean Professional theme: primary #2563EB, secondary/success #F59E0B, error #EF4444, background #f9fafb, surface #ffffff, text #111827

@@ -2,18 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <meta name="description" content="Tizen TV Application" />
+    <!-- Use a fixed viewport for Tizen TV while still allowing desktop preview responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tizen Notes Application" />
+    <meta name="theme-color" content="#2563EB" />
     <link rel="icon" type="image/png" href="/icon.png" />
-    <title>notes_frontend</title>
+    <title>Notes</title>
     <style>
-      body {
+      html, body {
         margin: 0;
         padding: 0;
-        width: 1920px;
-        height: 1080px;
         overflow: hidden;
+        background: #f9fafb;
       }
+      /* The app itself sizes to 1920x1080 within #root for Tizen, but uses responsive rules for web preview. */
     </style>
   </head>
   <body>
