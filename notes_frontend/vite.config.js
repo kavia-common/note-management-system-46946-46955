@@ -2,8 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 /**
- * Vite 5 config (Node 18 compatible) for React + Vite.
- * No SSR, no experimental options required.
+ * Vite 4 config (Node 18 compatible) for React + Vite.
+ * Basic dev/preview server host/port for local and containerized use.
  */
 export default defineConfig({
   plugins: [react()],
